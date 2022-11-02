@@ -1,0 +1,156 @@
+{{ block style}}
+<style>
+.circle {
+  height: 50px;
+  width: 50px;
+  background-color: #008000;
+  border-radius: 50%;
+}
+
+.circle2 {
+  height: 50px;
+  width: 50px;
+  background-color: #0000FF;
+  border-radius: 50%;
+}
+</style>
+
+
+{{ endblock }}
+
+        {{ block title }}Make your choice{{ endblock }}
+
+{{ block content }}
+
+
+{{ if color == 1 }}
+
+
+                <div class="card bg-light m-3">
+        <div class="card-body">
+                 <div class="card bg-light m-3">
+        <div class="card-body">
+    <p>
+      <h2> <center> Consider that you received the <span style="color: #008000"> <strong>GREEN </strong>  </span> ball</center></h2>
+         <center>   <div class="circle"></div></center>
+
+    </p>
+               <center> <p> You are getting <strong>400 points</strong>. Participant 2 is getting <strong>600 points</strong>.</p></span> </center>
+        </div>
+                 </div>
+                                               <center>What will you do?</center>
+            <br>
+
+
+
+         <center><input class="form-check-input" type="radio" name="decision" id="decision1" value="1"> <span>Inform the other participant that the color was <span style="color: #0000FF"> <strong>BLUE</strong> </span>:
+             <p>You get <strong>800 points</strong>. Participant 2 gets <strong>200 points</strong>.</p></span></center>
+            <br>
+            <center>   <input class="form-check-input" type="radio" name="decision" id="decision2" value="0"> Inform the other participant that the color was <span style="color: #008000"> <strong>GREEN </strong> </span> </span>:
+                <p> You get <strong>400 points</strong>. Participant 2 gets <strong>600 points</strong>.</p></span></center>
+
+        </div>
+         </div>
+
+ {{ else }}
+          <div class="card bg-light m-3">
+        <div class="card-body">
+                 <div class="card bg-light m-3">
+        <div class="card-body">
+    <p>
+      <h2> <center> Consider that you received the   <span style="color: #0000FF"> <strong>BLUE</strong> </span>  ball</center></h2>
+         <center>   <div class="circle2"></div></center>
+
+    </p>
+                        <center> <p> You are getting <strong>800 points</strong>. Participant 2 is getting <strong>200 points</strong>.</p></span> </center>
+                    </div>
+                         </div>
+                                   <center>What will you do?</center>
+            <br>
+
+<center>   <input class="form-check-input" type="radio" name="decision" id="decision3" value="0"> <span>Inform the other participant that the color was <span style="color: #0000FF"> <strong>BLUE</strong> </span>:
+            <p>You get <strong>800 points</strong>. Participant 2 gets <strong>200 points</strong>.</p></span></center>
+            <br>
+            <center>   <input class="form-check-input" type="radio" id="decision4" name="decision" value="1"> Inform the other participant that the color was <span style="color: #008000"> <strong>GREEN </strong> </span> </span> :
+                <p>You get <strong>400 points</strong>. Participant 2 gets <strong>600 points</strong></p></span></center>
+        </div>
+                 </div>
+{{ endif }}
+
+
+               <center> {{ next_button }} </center>
+
+
+<button type="button" onclick="show()">
+    Instructions
+</button>
+
+
+    <div id="inst" style="display: none">
+    {{ include Constants.instructions_template }}
+    </div>
+    <br>
+    <br>
+</div>
+
+
+            <button type="button" onclick="show2()">
+    Contact
+</button>
+
+    <div id="inst2" style="display: none">
+            {{ include Constants.contact }}
+    </div>
+
+{{ endblock }}
+
+{{ block script }}
+<script>
+function show() {
+  var x = document.getElementById("inst");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+function show2() {
+  var x = document.getElementById("inst2");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+
+function show3() {
+  var x = document.getElementById("inst3");
+  var y = document.getElementById("inst4");
+
+    if ((document.getElementById("green1").checked || document.getElementById("green2").checked) && (document.getElementById("blue1").checked || document.getElementById("blue2").checked)){
+
+
+    if (x.style.display === "none") {
+        x.style.display = "block";
+        y.style.display = "block";
+       document.getElementById("green1").disabled = 'false'
+       document.getElementById("green2").disabled = 'false'
+       document.getElementById("blue1").disabled = 'false'
+       document.getElementById("blue2").disabled = 'false'
+  }
+  }
+  else {alert("Please, make both choices.")}
+
+ }
+
+ function submits() {
+       document.getElementById("green1").removeAttribute("disabled");
+       document.getElementById("green2").removeAttribute("disabled");
+       document.getElementById("blue1").removeAttribute("disabled");
+       document.getElementById("blue2").removeAttribute("disabled");
+       form.submit()
+       }
+
+</script>
+
+{{ endblock }}

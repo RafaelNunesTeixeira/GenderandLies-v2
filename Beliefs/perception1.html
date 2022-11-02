@@ -1,0 +1,392 @@
+{{ block style }}
+  <style>
+    table {
+          table-layout: fixed ;
+          width: 100% ;
+        }
+     th {
+      width: 20%
+        text-align: center;
+        vertical-align: middle;
+      }
+        td {
+            text-align: center;
+            vertical-align: middle;
+            }
+        tr {
+        text-align: center;
+        vertical-align: middle;
+        }
+
+.slidecontainer {
+  width: 100%;
+}
+
+
+.slider {
+   margin: auto;
+  -webkit-appearance: none;
+  width: 80%;
+  height: 15px;
+  border-radius: 5px;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+  display: flex
+}
+
+.slider:hover {
+  opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #0736f0;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #0736f0;
+  cursor: pointer;
+}
+</style>
+
+
+{{ endblock }}
+
+{{ block title }}
+Survey  3
+{{ endblock }}
+
+{{ block content }}
+
+           <div class="card bg-light m-3">
+        <div class="card-body">
+
+<p>
+</p>
+<p>
+Consider other participants acting as Participant 1 in the previous task. All of them have the following characteristics.
+</p>
+
+{{ include Constants.match }}
+     <div id="see" style="display: none" onload="myFunction()">
+                        <p> Remember: </p>
+<ul>
+             <li> <span style="color: #008000"> <strong>GREEN </strong> </span>: Participant 1 <strong>400 points</strong>,  Participant 2 <strong>600 points</strong> </li>
+             <li>  <span style="color: #0000FF"> <strong>BLUE</strong> </span>:  Participant 1  <strong>800 points</strong>,  Participant 2 <strong>200 points</strong> </li>
+        </ul>
+
+            <p> For each behavior,please evaluate how the others perceive the motivation behind the behavior.</p>
+         <p> Describe from <strong>"Strongly Disagree" (1) </strong> to <strong>"Strongly agree" (5) </strong> your beliefs on how the others perceive the behavior according to the description on the third column.</p>
+         <p><strong>The first column represents the color Participant 1 randomly received. The second column indicates which information Participant 1 gave Participant 2. The third column represents possible motives behind the behavior of Participant 1.</strong></p>
+            <p> For example: if the third column describes "situational factor", you have to answer "to what extent the other participants perceive the behavior described is a due to a -situational factor-".</p>
+
+                <p> <strong>Remember: </strong> A correct answer is rewarded with 250 points. 200 points are subtracted from these 250 points for each unit your guess departs from the actual answer.</p>
+</div>
+</div>
+           </div>
+    <div id="see2" style="display: none" onload="myFunction()">
+      <div class="card bg-light m-3">
+        <div class="card-body">
+             <div class="form-group required">
+<table class="table table-hover table-striped table-responsive mx-auto ">
+    <center><h5>Question 1: To what extent the other participants perceive the behavior described is a due to the motive bellow?</h5></center>
+    <thead>
+
+        <tr>
+            <th>P1 Received</th>
+            <th>P1 informed</th>
+            <th><h2>Motive</h2></th>
+            </tr>
+    </thead>
+    <tbody>
+        <tr>
+
+            <td><span style="color: #008000"> <strong>GREEN</strong></span></td>
+            <td><span style="color: #0000FF"> <strong>BLUE</strong> </span></td>
+            <td><h3>Malicious intention</h3></td>
+        </tr>
+
+
+
+    </tbody>
+</table>
+
+
+       <div class="form-group required">
+    <table class="table table-hover table-striped table-responsive mx-auto ">
+        <thead>
+
+
+            <tr>
+                <th>"Strongly disagree"</th>
+                <th>“Partially disagree”</th>
+                <th> "Neutral"</th>
+                <th>“Partially agree”</th>
+                <th>“Strongly agree”</th>
+            </tr>
+    </table>
+
+             <input type="range" name="per1" id="per1" min="10" step="1" max="50" oninput="updateDescription1(this)"   class="slider">
+           <center>      <p > Your guess from 1 (Strongly disagree) to 5 (Strongly agree):  </p></center>
+            <center><p id="description1"> -  </p></center>
+         </div>
+
+
+<hr>
+
+             <div class="form-group required">
+
+                 <table class="table table-hover table-striped table-responsive mx-auto ">
+                      <center><h5>Question 2: To what extent the other participants perceive the behavior described is a due to the motive bellow?</h5></center>
+
+    <thead>
+
+        <tr>
+            <th>P1 Received</th>
+            <th>P1 informed</th>
+            <th><h2>Motive</h2></th>
+            </tr>
+    </thead>
+    <tbody>
+        <tr>
+
+            <td><span style="color: #008000"> <strong>GREEN</strong></span></td>
+            <td><span style="color: #0000FF"> <strong>BLUE</strong> </span></td>
+            <td><h3>Rational calculation</h3></td>
+        </tr>
+
+
+
+    </tbody>
+
+
+       <div class="form-group required">
+    <table class="table table-hover table-striped table-responsive mx-auto ">
+
+        <thead>
+
+
+            <tr>
+                <th>"Strongly disagree"</th>
+                <th>“Partially disagree”</th>
+                <th> "Neutral"</th>
+                <th>“Partially agree”</th>
+                <th>“Strongly agree”</th>
+            </tr>
+    </table>
+
+             <input type="range" name="per2" id="per2" min="10" step="1" max="50" oninput="updateDescription2(this)"   class="slider">
+           <center>      <p > Your guess from 1 (Strongly disagree) to 5 (Strongly agree):  </p></center>
+            <center><p id="description2"> -  </p></center>
+         </div>
+
+<hr>
+             <div class="form-group required">
+<table class="table table-hover table-striped table-responsive mx-auto ">
+     <center><h5>Question 3: To what extent the other participants perceive the behavior described is a due to the motive bellow?</h5></center>
+
+    <thead>
+
+        <tr>
+            <th>P1 Received</th>
+            <th>P1 informed</th>
+            <th><h2>Motive</h2></th>
+            </tr>
+    </thead>
+    <tbody>
+        <tr>
+
+            <td><span style="color: #008000"> <strong>GREEN</strong></span></td>
+            <td><span style="color: #0000FF"> <strong>BLUE</strong> </span></td>
+            <td><h3>An emotional decision</h3></td>
+        </tr>
+
+
+
+    </tbody>
+
+
+       <div class="form-group required">
+    <table class="table table-hover table-striped table-responsive mx-auto ">
+        <thead>
+
+
+            <tr>
+                <th>"Strongly disagree"</th>
+                <th>“Partially disagree”</th>
+                <th> "Neutral"</th>
+                <th>“Partially agree”</th>
+                <th>“Strongly agree”</th>
+            </tr>
+    </table>
+
+             <input type="range" name="per3" id="per3" min="10" step="1" max="50" oninput="updateDescription3(this)"   class="slider">
+           <center>      <p > Your guess from 1 (Strongly disagree) to 5 (Strongly agree):  </p></center>
+            <center><p id="description3"> -  </p></center>
+         </div>
+
+<hr>
+             <div class="form-group required">
+<table class="table table-hover table-striped table-responsive mx-auto ">
+      <center><h5>Question 4: To what extent the other participants perceive the behavior described is a due to the motive bellow?</h5></center>
+
+    <thead>
+
+        <tr>
+            <th>P1 Received</th>
+            <th>P1 informed</th>
+            <th><h2>Motive</h2></th>
+            </tr>
+    </thead>
+    <tbody>
+        <tr>
+
+            <td><span style="color: #008000"> <strong>GREEN</strong></span></td>
+            <td><span style="color: #0000FF"> <strong>BLUE</strong> </span></td>
+            <td><h3>Situational factor</h3></td>
+        </tr>
+
+
+
+    </tbody>
+
+
+       <div class="form-group required">
+    <table class="table table-hover table-striped table-responsive mx-auto ">
+
+        <thead>
+
+
+            <tr>
+                <th>"Strongly disagree"</th>
+                <th>“Partially disagree”</th>
+                <th> "Neutral"</th>
+                <th>“Partially agree”</th>
+                <th>“Strongly agree”</th>
+            </tr>
+    </table>
+
+             <input type="range" name="per4" id="per4" min="10" step="1" max="50" oninput="updateDescription4(this)"   class="slider">
+           <center>      <p > Your guess from 1 (Strongly disagree) to 5 (Strongly agree):  </p></center>
+            <center><p id="description4"> -  </p></center>
+         </div>
+<hr>
+
+             <div class="form-group required">
+<table class="table table-hover table-striped table-responsive mx-auto ">
+<center><h5>Question 5: To what extent the other participants perceive the behavior described is a due to the motive bellow?</h5></center>
+
+    <thead>
+
+        <tr>
+            <th>P1 Received</th>
+            <th>P1 informed</th>
+            <th><h2>Motive</h2></th>
+            </tr>
+    </thead>
+    <tbody>
+        <tr>
+
+            <td><span style="color: #008000"> <strong>GREEN</strong></span></td>
+            <td><span style="color: #0000FF"> <strong>BLUE</strong> </span></td>
+            <td><h3>An honest mistake</h3></td>
+        </tr>
+
+
+
+    </tbody>
+
+
+       <div class="form-group required">
+    <table class="table table-hover table-striped table-responsive mx-auto ">
+        <thead>
+
+
+            <tr>
+                <th>"Strongly disagree"</th>
+                <th>“Partially disagree”</th>
+                <th> "Neutral"</th>
+                <th>“Partially agree”</th>
+                <th>“Strongly agree”</th>
+            </tr>
+    </table>
+
+             <input type="range" name="per5" id="per5" min="10" step="1" max="50" oninput="updateDescription5(this)"   class="slider">
+           <center>      <p > Your guess from 1 (Strongly disagree) to 5 (Strongly agree):  </p></center>
+            <center><p id="description5"> -  </p></center>
+         </div>
+
+
+<hr>
+
+
+
+</div>
+</div>
+
+
+
+
+
+
+
+               <br>
+            <br>
+            <center>
+            {{ next_button }}
+</center>
+</div>
+{{ endblock }}
+               {{block script}}
+
+<script>
+
+let description1 = document.getElementById('description1');
+let description2 = document.getElementById('description2');
+let description3 = document.getElementById('description3');
+let description4 = document.getElementById('description4');
+let description5 = document.getElementById('description5');
+
+function updateDescription1(input) {
+    let take = parseInt(input.value)/10;
+    description1.innerText = `${take}`;
+
+}
+
+function updateDescription2(input) {
+    let take = parseInt(input.value)/10;
+    description2.innerText = `${take}`;
+}
+function updateDescription3(input) {
+    let take = parseInt(input.value)/10;
+    description3.innerText = `${take}`;
+}
+function updateDescription4(input) {
+    let take = parseInt(input.value)/10;
+    description4.innerText = `${take}`;
+}
+function updateDescription5(input) {
+    let take = parseInt(input.value)/10;
+    description5.innerText = `${take}`;
+}
+function myFunction2() {
+    var x = document.getElementById("see");
+    var y = document.getElementById("see2");
+    x.style.display = "block"
+    y.style.display = "block"
+}
+
+const myTimeout = setTimeout(myFunction2, 2500);
+</script>
+{{endblock}}

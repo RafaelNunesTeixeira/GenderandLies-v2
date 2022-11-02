@@ -1,0 +1,20 @@
+
+
+
+{{ block content }}
+
+
+<center> <img src="{{ static 'global/uva-logo.png' }}"/> </center>
+
+<br>
+<br>
+
+
+    {{ include Constants.instructions_template }}
+
+           <center>     On the next page, you are required to answer some questions in order to start the task.  </center>
+
+<br> <br>
+        <center> {{ next_button }} </center>
+
+{{ endblock }}

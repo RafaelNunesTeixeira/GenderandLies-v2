@@ -1,0 +1,183 @@
+{{block style}}
+<style>
+.circle4 {
+  height: 50px;
+  width: 50px;
+  background-color: #008000;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.circle3 {
+  height: 50px;
+  width: 50px;
+  background-color: #0000FF;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.div2 {
+  width: 115px;
+  height: 45px;
+  display: flex;
+  flex-wrap: wrap;
+}
+</style>
+{{endblock}}
+
+        {{ block title }}Make your choice - {{ round }}{{ endblock }}
+
+{{ block content }}
+
+
+<div class="card bg-light m-3" onload="myFunction()">
+    <div class="card-body">
+ <p>
+     <center>  This <strong>Participant 1</strong> has the following characteristics:</center>
+    </p>
+        <br>
+        <p>
+             <strong>Lives in:</strong>  {{place}}
+        </p>
+            <p>
+                <strong>Gender:</strong> {{gender}}
+            </p>
+        <p>
+            <strong>Age between:</strong> {{age}}
+        </p>
+        </p>
+    </div>
+</div>
+
+
+<div id="see" style="display: none" onload="myFunction()">
+
+
+{{ if signal == 1 }}
+
+  <div class="card bg-light m-3">
+    <div class="card-body">
+     <div class="card bg-light m-3">
+    <span class="card-body">
+    <p>
+      <h2> <center>This Participant 1 informed that the ball was:</center></h2>
+        <center>   <span class="circle4"> </span> </center>
+        <h2> <center> A <span style="color: #008000"> <strong>GREEN</strong></span> ball. </center></h2>
+
+
+    </p>
+               <center> <p> Participant 1 is getting <strong>400 points</strong>. You are getting <strong>600 points</strong>.</p></span> </center>
+    </div>
+     </div>
+                                               <center>What will you do?</center>
+            <br>
+
+
+
+         <center><input class="form-check-input" type="radio" name="decision" id="decision0a"  value="0"> <span> Do nothing: </span>
+             <p>Participant 1 gets <strong>400 points</strong>.  You get <strong>600 points</strong>.</p></span></center>
+            <br>
+            <center>   <input class="form-check-input" type="radio" name="decision" id="decision0b"  value="1"> Punish Participant 1: </span>
+                <p> Participant 1 gets <strong>100 points</strong>.  You get <strong>550 points</strong>.</p></span></center>
+
+    </div>
+ </div>
+{{ endif }}
+
+{{ if signal == 2 }}
+
+  <div class="card bg-light m-3">
+    <div class="card-body">
+     <div class="card bg-light m-3">
+    <span class="card-body">
+    <p>
+      <h2> <center> This Participant 1 informed that the ball was:</center></h2>
+        <center>    <span class="circle3"> </span></center>
+                   <h2> <center> A <span style="color: #0000FF"> <strong>BLUE</strong></span> ball.</center> </h2>
+        <center></center>
+
+    </p>
+               <center> <p> Participant 1 is getting <strong>800 points</strong>. You are getting <strong>200 points</strong>.</p></span> </center>
+        </div>
+         </div>
+                                               <center>What will you do?</center>
+            <br>
+
+
+
+         <center><input class="form-check-input" type="radio" name="decision" id="decision1a"  value="0"> <span> Do nothing: </span>
+             <p>Participant 1 gets <strong>800 points</strong>.  You get <strong>200 points</strong>.</p></span></center>
+            <br>
+            <center>   <input class="form-check-input" type="radio" name="decision" id="decision1b"  value="1"> Punish Participant 1: </span>
+                <p> Participant 1 gets <strong>500 points</strong>.  You get <strong>150 points</strong>.</p></span></center>
+
+    </div>
+</div>
+
+{{ endif }}
+
+
+
+
+<div id="see2" style="display: none" >
+    <center> {{ next_button }} </center>
+</div>
+
+ </div>
+</div>
+<center>
+
+<button type="button" onclick="show()">
+    Instructions
+</button>
+
+
+<div id="inst" style="display: none">
+{{ include Constants.instructions_template }}
+</div>
+<br>
+<br>
+
+</center>
+<center>
+            <button type="button" onclick="show2()">
+    Contact
+        </button>
+
+    <div id="inst2" style="display: none">
+            {{ include Constants.contact }}
+    </div>
+</center>
+{{ endblock }}
+
+{{block script}}
+<script>
+function show() {
+  var x = document.getElementById("inst");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+function show2() {
+  var x = document.getElementById("inst2");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+function myFunction2() {
+  var x = document.getElementById("see");
+  var y = document.getElementById("see2");
+  x.style.display = "block"
+   y.style.display = "block"
+
+
+}
+
+const myTimeout = setTimeout(myFunction2, 2500);
+
+</script>
+{{endblock}}

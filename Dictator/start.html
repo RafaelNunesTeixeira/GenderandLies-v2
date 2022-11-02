@@ -1,0 +1,68 @@
+ {{ block title }}<center> <img src="{{ static 'global/uva-logo.png' }}"/> </center>{{ endblock }}
+
+{{ block content }}
+        <center><h3>Welcome</h3></center>
+        <div class="card bg-light m-3">
+        <div class="card-body">
+
+
+
+
+            <div class="card bg-light m-3">
+        <div class="card-body">
+            <p> This research was developed by members of the University of Amsterdam, University of Mannheim and University of Kassel.         All ethical protocols are strictly followed, and no personal data will be disclosed. </p>
+
+            <p>This task takes up to {{  Constants.duration }} minutes.</p>
+            <p>In exchange for your participation you will receive a monetary payment of {{  Constants.fee }} pounds. In
+addition, you can earn up to {{  Constants.bonus }} pounds according to your decisions and the decisions of another participant.</p>
+            <p>Your decisions affect how much money you earn. So, please pay attention to the instructions.</p>
+               <p>
+        Pay attention. During the experiment, there will be some attentions check questions.  Payments are contingent on not failing the attention checks.
+    </p>
+            <p>The bonus payment may take up to one week to be processed. If you have any questions, please ask by  clicking on the icon in the bottom right. </p>
+
+
+        </div>
+
+        </div>
+        </div>
+        </div>
+  <center>
+    {{ next_button }}
+</center>
+
+
+<div>
+
+    <br>
+
+
+    <div id="inst2" style="display: none">
+            {{ include Constants.contact }}
+    </div>
+
+{{ endblock }}
+
+{{ block script}}
+<script>
+function show() {
+  var x = document.getElementById("inst");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+function show2() {
+  var x = document.getElementById("inst2");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+</script>
+
+{{endblock}}
+
+

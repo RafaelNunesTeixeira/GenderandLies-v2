@@ -1,0 +1,72 @@
+
+        {{ block title }}Before We Start{{ endblock }}
+
+{{ block content }}
+        <div class="card bg-light m-3">
+        <div class="card-body">
+            <p>Before we start the task, please answer the questions below:</p>
+        <div class="card bg-light m-3">
+        <div class="card-body">
+
+        {{ formfield 'age'}}
+
+
+        {{ formfield 'gender' }}
+
+
+        {{ formfield 'residence'}}
+
+            {{ formfield 'siblings'}}
+
+        </div>
+
+        </div>
+        </div>
+        </div>
+  <center>
+    {{ next_button }}
+</center>
+
+
+<div>
+
+
+    <div id="inst" style="display: none">
+    {{ include Constants.instructions_template }}
+    </div>
+    <br>
+    <br>
+</div>
+        <button type="button" onclick="show2()">
+    Contact
+</button>
+
+    <div id="inst2" style="display: none">
+            {{ include Constants.contact }}
+    </div>
+
+{{ endblock }}
+
+{{ block script}}
+<script>
+function show() {
+  var x = document.getElementById("inst");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+function show2() {
+  var x = document.getElementById("inst2");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+</script>
+
+{{endblock}}
+
+

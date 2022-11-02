@@ -1,0 +1,115 @@
+
+        {{ block title }}Questions{{ endblock }}
+
+{{ block content }}
+        <div class="card bg-light m-3">
+        <div class="card-body">
+    <p>
+        Please, answer the questions below to check if you understood the instructions:
+    </p>
+            <p>
+        If necessary, you can check the instructions at the bottom of the page.
+    </p>
+
+        </div>
+        </div>
+
+        <p><strong>Question 1:</strong> In each round, what is the chance of getting a <span style="color: #0000FF"> <strong>BLUE</strong> </span> ball?</p>
+
+        {{ formfield 'q1' label=""}}
+
+        <br>
+        <p><strong>Question 2:</strong> Does Participant 1 have to inform Participant 2 truthfully about the color of the ball that was picked?</p>
+
+        {{ formfield 'q2' label=""}}
+        <br>
+        <p><strong>Question 3:</strong> Is the other participant human?</p>
+
+
+        {{ formfield 'q3' label=""}}
+
+        <br>
+        <p><strong>Question 4:</strong> How many Pounds is 250 points worth?</p>
+
+        {{ formfield 'q4' label=""}}
+
+        <br>
+
+        <p><strong>Question 5:</strong> Please select the number eighty-eight in the list below?</p>
+
+        {{ formfield 'q5' label=""}}
+
+        <p><strong>Question 6:</strong> In each round, what are the INITIAL points of Participant 2 if the randomized Color is <span style="color: #008000"> <strong>GREEN</strong></span>?</p>
+
+        {{ formfield 'q6' label=""}}
+        <br>
+        <p><strong>Question 7:</strong> In each round, what are the FINAL points of Participant 2 if the randomized Color is <span style="color: #008000"> <strong>GREEN</strong></span> but Participant 1 untruthfully informs Participant 2 that the color was <span style="color: #0000FF"> <strong>BLUE</strong> </span>?</p>
+                {{ formfield 'q7' label=""}}
+<br>
+        <p><strong>Question 8:</strong> Does Participant 2 know the colors of the balls that was randomly received by Participant 1 at the start of the experiment?</p>
+                {{ formfield 'q8' label=""}}
+<br>
+
+    <p><strong>Question 9:</strong> What happens when Participant 2 decides to punish Participant 1?</p>
+                {{ formfield 'q9' label=""}}
+<br>
+
+    <p><strong>Question 10:</strong> Does Participant 2 have to punish Participant 1?</p>
+                {{ formfield 'q10' label=""}}
+<br>
+            <p><strong>Question 11:</strong> You were randomly selected as:</p>
+                {{ formfield 'q11' label=""}}
+<br>
+
+
+
+  <center>
+    {{ next_button }}
+</center>
+
+
+<div>
+        <button type="button" onclick="show()">
+    Instructions
+</button>
+
+    <div id="inst" style="display: none">
+    {{ include Constants.instructions_template }}
+    </div>
+    <br>
+    <br>
+</div>
+        <button type="button" onclick="show2()">
+    Contact
+</button>
+
+    <div id="inst2" style="display: none">
+            {{ include Constants.contact }}
+    </div>
+
+{{ endblock }}
+
+{{block script}}
+<script>
+function show() {
+  var x = document.getElementById("inst");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+function show2() {
+  var x = document.getElementById("inst2");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+</script>
+
+
+{{ endblock }}
+
+

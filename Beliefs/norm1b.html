@@ -1,0 +1,239 @@
+{{ block style }}
+   <style>
+    table {
+          table-layout: fixed ;
+          width: 100% ;
+        }
+     th {
+      width: 20%
+        text-align: center;
+        vertical-align: middle;
+      }
+        td {
+            text-align: center;
+            vertical-align: middle;
+            }
+        tr {
+        text-align: center;
+        vertical-align: middle;
+        }
+
+.slidecontainer {
+  width: 100%;
+}
+
+
+.slider {
+   margin: auto;
+  -webkit-appearance: none;
+  width: 80%;
+  height: 15px;
+  border-radius: 5px;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+  display: flex
+}
+
+.slider:hover {
+  opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #0736f0;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #0736f0;
+  cursor: pointer;
+}
+</style>
+
+{{ endblock }}
+
+{{ block title }}
+Survey 4
+{{ endblock }}
+
+{{ block content }}
+        <div class="card bg-light m-3">
+        <div class="card-body">
+
+
+            <p>
+Consider other participants acting as Participant 1 in the previous task. All of them have the following characteristics.
+</p>
+{{ include Constants.match }}
+     <div id="see" style="display: none" onload="myFunction()">
+
+                        <p> Remember: </p>
+<ul>
+              <li> If Participant 1 informed that the ball was<span style="color: #008000">   <strong>GREEN </strong> </span>: Participant 1 <strong>400 points</strong>,  Participant 2 <strong>600 points</strong> </li>
+             <li> If Participant 1 informed that the ball was  <span style="color: #0000FF"> <strong>BLUE</strong> </span>:  Participant 1  <strong>800 points</strong>,  Participant 2 <strong>200 points</strong> </li>
+      </ul>
+         <p> For each behavior,please evaluate what the individual <strong>SHOULD</strong> do by choosing in the table below from <strong>"Strongly Disagree" (1)</strong> to <strong>"Strongly agree" (5)</strong>.</p>
+
+            <p>The first column represents the color that Participant 1 randomly received. The second column indicates which information Participant 1  <strong>SHOULD</strong>  give Participant 2.</p>
+
+
+     </div>
+
+</div>
+</div>
+
+
+     <div id="see2" style="display: none" onload="myFunction()">
+                 <div class="card bg-light m-3">
+        <div class="card-body">
+<div class="form-group required">
+<table class="table table-hover table-striped table-responsive mx-auto ">
+             <center><h5>Question 1: To what extent the participant 1 should act in the described way according to you?</h5></center>
+    <thead>
+
+        <tr>
+            <th>P1 Received</th>
+          <th>P1 <strong>SHOULD inform </strong></th>
+        </tr>
+
+    </thead>
+    <tbody>
+
+
+
+
+        <tr>
+
+              <td><span style="color: #008000"> <strong>GREEN</strong></span> </td>
+                        <td><span style="color: #0000FF"> <strong>BLUE</strong> </span></td>
+
+        </tr>
+    </tbody>
+
+
+       <div class="form-group required">
+    <table class="table table-hover table-striped table-responsive mx-auto ">
+        <thead>
+
+
+            <tr>
+                <th>"Strongly disagree"</th>
+                <th>“Partially disagree”</th>
+                <th> "Neutral"</th>
+                <th>“Partially agree”</th>
+                <th>“Strongly agree”</th>
+            </tr>
+    </table>
+
+             <center> <input type="range" name="normsblueb" id="norm2" min="10" step="1" max="50" oninput="updateDescription2(this)"   class="slider"></center>
+            <center>      <p> Your guess from 1 (Strongly disagree) to 5 (Strongly agree):  </p></center>
+            <center><p id="description2"> -  </p></center>
+         </div>
+<hr>
+
+<div class="form-group required">
+<table class="table table-hover table-striped table-responsive mx-auto ">
+     <center><h5>Question 2: To what extent the participant 1 should act in the described way according to you?</h5></center>
+    <thead>
+
+        <tr>
+            <th>P1 Received</th>
+            <th>P1 <strong>SHOULD inform </strong></th>
+        </tr>
+
+    </thead>
+    <tbody>
+
+
+
+
+        <tr>
+
+                       <td><span style="color: #0000FF"> <strong>BLUE</strong> </span></td>
+                     <td><span style="color: #0000FF"> <strong>BLUE</strong> </span></td>
+        </tr>
+    </tbody>
+
+
+       <div class="form-group required">
+    <table class="table table-hover table-striped table-responsive mx-auto ">
+        <thead>
+
+
+    <svg  width="100%" height="25">
+      <text class="range__point" x="10%" y="14" text-anchor="middle"  font-weight="bold">"Strongly disagree"</text>
+      <text class="range__point" x="30%" y="14" text-anchor="middle" font-weight="bold">"Partially disagree"</text>
+      <text class="range__point" x="50%" y="14" text-anchor="middle" font-weight="bold">"Neutral"</text>
+      <text class="range__point" x="70%" y="14" text-anchor="middle" font-weight="bold">"Partially agree"</text>
+      <text class="range__point" x="90%" y="14" text-anchor="middle" font-weight="bold">"Strongly agree"</text>
+   </svg>
+    </table>
+
+            <center> <input type="range" name="normsgreenb" id="norm3" min="10" step="1" max="50" oninput="updateDescription3(this)"   class="slider"></center>
+           <center>      <p> Your guess from 1 (Strongly disagree) to 5 (Strongly agree):  </p></center>
+            <center><p id="description3"> -  </p></center>
+         </div>
+
+
+
+
+
+        </div>
+                 </div>
+</table>
+
+
+
+<center>
+            {{ next_button }}
+
+           </div>
+{{ endblock }}
+
+            {{block script}}
+
+<script>
+
+let description = document.getElementById('description');
+let description2 = document.getElementById('description2');
+let description3 = document.getElementById('description3');
+let description4 = document.getElementById('description4');
+
+function updateDescription(input) {
+    let take = parseInt(input.value)/10;
+    description.innerText = `${take}`;
+
+}
+
+function updateDescription2(input) {
+    let take = parseInt(input.value)/10;
+    description2.innerText = `${take}`;
+}
+function updateDescription3(input) {
+    let take = parseInt(input.value)/10;
+    description3.innerText = `${take}`;
+}
+function updateDescription4(input) {
+    let take = parseInt(input.value)/10;
+    description4.innerText = `${take}`;
+}
+function myFunction2() {
+    var x = document.getElementById("see");
+    var y = document.getElementById("see2");
+    x.style.display = "block"
+    y.style.display = "block"
+}
+
+const myTimeout = setTimeout(myFunction2, 2500);
+</script>
+{{endblock}}

@@ -1,0 +1,122 @@
+
+<style>
+.circle {
+  height: 25px;
+  width: 25px;
+  background-color: #008000;
+  border-radius: 50%;
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-top: 5px;
+  margin-down: 5px;
+
+
+
+}
+
+.circle2 {
+  height: 25px;
+  width: 25px;
+  background-color: #0000FF;
+  border-radius: 50%;
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-top: 5px;
+  margin-down: 5px;
+
+
+}
+.div1 {
+  width: 185px;
+  height: 85px;
+  border: 5px solid black;
+  display: flex;
+  flex-wrap: wrap;
+
+}
+
+</style>
+
+
+
+<div class="card bg-light m-3">
+    <div class="card-body">
+    <h3>
+        Instructions:
+    </h3>
+
+
+
+<div class="card bg-light m-3">
+    <div class="card-body">
+    <p>
+        In this study, you will be randomly paired with another participant. Either you or the other participant will be randomly selected as 'Participant 1' or 'Participant 2'.
+   </p>
+        <div class="card bg-light m-3">
+    <div class="card-body">
+
+        <center>    <h2>You were selected as <strong>{{ Constants.role}}</strong>. </h2> </center>
+
+    </div>
+</div>
+        <p>The task is divided into two parts:</p>
+
+        <h3><strong>Part 1 - Participant 1:</strong></h3>
+
+        <p> Consider the box bellow: <p>
+          <center>   <div class="div1">
+      <div class="circle"></div><div class="circle"></div><div class="circle"></div><div class="circle"></div><div class="circle"></div>
+
+      <div class="circle2"></div><div class="circle2"></div><div class="circle"></div><div class="circle"></div><div class="circle"></div>
+    </div> </center>
+     <br>
+            <li>8 balls are <span style="color: #008000"> <strong>GREEN</strong>  </span> (80% of chance).</li>
+            <li>2 balls are  <span style="color: #0000FF"> <strong>BLUE</strong>  </span> (20% of chance).</li>
+        <br>
+        <p> A ball will be randomly picked by the computer and shown to Participant 1. The randomized ball's color establishes the number of points that each participant <strong>starts</strong> with.  </p>
+
+         <ul>
+             <li>A <span style="color: #008000"> <strong>GREEN </strong> </span> ball means  that Participant 1 starts with <strong>400 points</strong>, while Participant 2 starts with <strong>600 points</strong> </li>
+             <li> A  <span style="color: #0000FF"> <strong>BLUE</strong> </span>  ball means that Participant 1 starts with <strong>800 points</strong>, while Participant 2 starts with <strong>200 points</strong> </li>
+        </ul>
+
+
+               <p> After Participant 1 has seen the color of the ball, Participant 1 has to inform Participant 2 of the color of the ball. The actual color informed by Participant 1 determines the final number of points that each participant receives.</p>
+               <p> Notice that Participant 1 can correctly inform Participant 2 about the observed color or may decide to misinform and untruthfully report the ball's color. That is:</p>
+
+        <ul>
+        <li> If Participant 1 informs Participant 2 that the color was <span style="color: #008000"> <strong>GREEN</strong></span>, Participant 1 gets <strong>400 points</strong> and Participant 2 gets <strong>600 points</strong>, even if the ball was <span style="color: #0000FF"> <strong>BLUE</strong></span>.</li>
+        <li> If Participant 1 informs Participant 2 that the color was <span style="color: #0000FF"> <strong>BLUE</strong></span>,  Participant 1 gets <strong>800 points</strong> and Participant 2 gets <strong>200 points</strong>, even if the ball was <span style="color: #008000"> <strong>GREEN</strong></span>. </li>
+        </ul>
+
+
+        <h3><strong>Part 2 - Participant 2:</strong></h3>
+
+        <p>After Participant 1 has communicated the ball color, it is Participant 2’s turn.</p>
+
+        <p> Participant 2 receives the demographic information that Participant 1 answered on the previous screen.</p>
+
+        <p> Participant 2 receives the colors of the balls informed by Participant 1 during part 1.</p>
+
+        <p>Notice that Participant 2 does not know the actual color that was randomly picked by the computer and shown to Participant 1. Participant 2 only knows the information sent by Participant 1.</p>
+
+        <p>After being informed about the color of the ball, Participant 2 has the option to punish Participant 1. Punishment is not mandatory.</p>
+
+        <p>If Participant 2 decides not to punish, the participant’s payoffs stay the same.</p>
+
+        <p>If Participant 2 decides to punish Participant 1, Participant 1 loses 300 points and Participant 2 loses 50 points.</p>
+
+
+
+    </div>
+</div>
+    </div>
+</div>
+
+<div class="card bg-light m-3">
+    <div class="card-body">
+        <p><strong>Earnings: </strong>In the experiment, you can earn points. The points you earn will be converted into Pounds at the rate</p>
+        <p><center><strong>250 points = 1.00 Pounds.</strong></center></p>
+        <p>Your extra earnings will be added to your account a couple of days after the end of the experiment.</p>
+    </div>
+ </div>

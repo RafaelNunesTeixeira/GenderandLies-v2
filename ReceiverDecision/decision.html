@@ -1,0 +1,146 @@
+{{block style}}
+<style>
+.circle {
+  height: 25px;
+  width: 25px;
+  background-color: #008000;
+  border-radius: 50%;
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-top: 5px;
+  margin-down: 5px;
+
+
+
+}
+
+.circle2 {
+  height: 25px;
+  width: 25px;
+  background-color: #0000FF;
+  border-radius: 50%;
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-top: 5px;
+  margin-down: 5px;
+
+
+}
+.div1 {
+  width: 100px;
+  height: 85px;
+  border: 5px solid black;
+  display: flex;
+  flex-wrap: wrap;
+
+}
+
+</style>
+</style>
+{{endblock}}
+
+        {{ block title }}Information{{ endblock }}
+
+{{ block content }}
+
+
+        <div class="card bg-light m-3">
+        <div class="card-body">
+                 <div class="card bg-light m-3">
+        <div class="card-body">
+    <p>
+      <h3> <center> You were selected as <strong> Participant 2</strong></center></h3>
+    </p>
+
+        </div>
+                 </div>
+<p>In the following pages, you will see the information sent by 15 participants who took the role of Participant 1.</p>
+
+<p>All decisions are real, made by other participants. One of them is the one you were randomly paired with. We will use the decision associated with this participant to calculate your and Participant 1's payoffs.</p>
+
+<p>You will have to decide whether to punish Participant 1 or not to punish depending on the color of the ball that Participant 1 has informed you about.</p>
+
+<p>Remember, you do not know which color was drawn by the computer and shown to Participant 1. You only know what Participant 1 has informed you. Participant 1 may or may not have untruthfully reported the color that was drawn by the computer.</p>
+
+        </div>
+        </div>
+
+
+
+
+        <center> {{ next_button }} </center>
+
+
+<center>
+<button type="button" onclick="show()">
+    Instructions
+</button>
+</center>
+
+    <div id="inst" style="display: none">
+    {{ include Constants.instructions_template }}
+    </div>
+    <br>
+    <br>
+</div>
+
+<center>    <button type="button" onclick="show2()">
+    Contact
+</button>
+
+    <div id="inst2" style="display: none">
+            {{ include Constants.contact }}
+    </div>
+</center>
+
+{{ endblock }}
+
+{{block script}}
+<script>
+function show() {
+  var x = document.getElementById("inst");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+function show2() {
+  var x = document.getElementById("inst2");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+
+function show3() {
+  var x = document.getElementById("inst3");
+  var y = document.getElementById("inst4");
+
+    if ((document.getElementById("green1").checked || document.getElementById("green2").checked) && (document.getElementById("blue1").checked || document.getElementById("blue2").checked)){
+
+
+    if (x.style.display === "none") {
+        x.style.display = "block";
+        y.style.display = "block";
+       document.getElementById("green1").disabled = 'false'
+       document.getElementById("green2").disabled = 'false'
+       document.getElementById("blue1").disabled = 'false'
+       document.getElementById("blue2").disabled = 'false'
+  }
+  }
+  else {alert("Please, make both choices.")}
+
+ }
+
+ function submits() {
+       document.getElementById("green1").removeAttribute("disabled");
+       document.getElementById("green2").removeAttribute("disabled");
+       document.getElementById("blue1").removeAttribute("disabled");
+       document.getElementById("blue2").removeAttribute("disabled");
+       form.submit()
+       }
+
+</script>
+{{endblock}}

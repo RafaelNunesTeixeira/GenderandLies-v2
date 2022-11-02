@@ -1,0 +1,242 @@
+{{ block style }}
+   <style>
+    table {
+          table-layout: fixed ;
+          width: 100% ;
+        }
+     th {
+      width: 20%
+        text-align: center;
+        vertical-align: middle;
+      }
+        td {
+            text-align: center;
+            vertical-align: middle;
+            }
+        tr {
+        text-align: center;
+        vertical-align: middle;
+        }
+
+.slidecontainer {
+  width: 100%;
+}
+
+
+.slider {
+   margin: auto;
+  -webkit-appearance: none;
+  width: 80%;
+  height: 15px;
+  border-radius: 5px;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+  display: flex
+}
+
+.slider:hover {
+  opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #0736f0;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #0736f0;
+  cursor: pointer;
+}
+</style>
+
+{{ endblock }}
+
+{{ block title }}
+Survey 2
+{{ endblock }}
+
+{{ block content }}
+        <div class="card bg-light m-3">
+        <div class="card-body">
+
+
+            <p>
+Consider other participants acting as Participant 1 in the previous task. All of them have the following characteristics.
+</p>
+{{ include Constants.match }}
+     <div id="see" style="display: none" onload="myFunction()">
+
+                        <p> Remember: </p>
+<ul>
+              <li> If Participant 1 informed that the ball was<span style="color: #008000">   <strong>GREEN </strong> </span>: Participant 1 <strong>400 points</strong>,  Participant 2 <strong>600 points</strong> </li>
+             <li> If Participant 1 informed that the ball was  <span style="color: #0000FF"> <strong>BLUE</strong> </span>:  Participant 1  <strong>800 points</strong>,  Participant 2 <strong>200 points</strong> </li>
+      </ul>
+
+            <p> For each behavior, you have to evaluate how the other participants of the experiment evaluate the situation. That is, you have to guess what the <strong>other participants</strong> think about the situation from  <strong>"very socially inappropriate" (1)</strong> to  <strong>“very socially appropriate” (5)</strong>. </p>
+
+            <p>The first column represents what Participant 1 randomly received. The second column indicates which information Participant 1 gave Participant 2. </p>
+                      <p> <strong>Remember: </strong> A correct answer is rewarded with 250 points. 200 points are subtracted from these 250 points for each unit your guess departs from the actual answer.</p>
+     </div>
+
+</div>
+</div>
+
+
+<div id="see2" style="display: none" onload="myFunction()">
+      <div class="card bg-light m-3">
+      <div class="card-body">
+            <div class="form-group required">
+            <table class="table table-hover table-striped table-responsive mx-auto ">
+                  <center><h5>Question 1: How appropriate is the described situation according to the other participants?</h5></center>
+
+                <thead>
+
+                <tr>
+                    <th>P1 Received</th>
+                    <th>P1 informed</th>
+                </tr>
+
+            </thead>
+            <tbody>
+
+                    <tr>
+
+                        <td><span style="color: #008000"> <strong>GREEN</strong></span></td>
+                        <td><span style="color: #0000FF"> <strong>BLUE</strong> </span></td>
+                    </tr>
+            </tbody>
+
+            </table>
+            </div>
+       <div class="form-group required">
+        <table class="table table-hover table-striped table-responsive mx-auto ">
+        <thead>
+
+
+            <tr>
+                <th>"Very Socially Inappropriate"</th>
+                <th>“Somewhat Socially Inappropriate”</th>
+                <th> "Neutral"</th>
+                <th>“Somewhat Socially Appropriate”</th>
+                <th>“Very Socially Appropriate”</th>
+            </tr>
+          </table>
+
+             <input type="range" name="normsblue" id="norm2" min="10" step="1" max="50" oninput="updateDescription2(this)"   class="slider">
+           <center>      <p > Your guess from 1 (Very Socially Inappropriate) to 5 (Very Socially Appropriate):  </p></center>
+            <center><p id="description2"> -  </p></center>
+         </div>
+
+<hr>
+
+
+<div class="form-group required">
+<table class="table table-hover table-striped table-responsive mx-auto ">
+                     <center><h5>Question 2: How appropriate is the described situation according to the other participants?</h5></center>
+    <thead>
+
+        <tr>
+            <th>P1 Received</th>
+            <th>P1 informed</th>
+        </tr>
+
+    </thead>
+    <tbody>
+
+
+
+
+        <tr>
+
+                     <td><span style="color: #0000FF"> <strong>BLUE</strong> </span></td>
+            <td><span style="color: #0000FF"> <strong>BLUE</strong> </span></td>
+        </tr>
+    </tbody>
+</table>
+
+       <div class="form-group required">
+    <table class="table table-hover table-striped table-responsive mx-auto ">
+        <thead>
+
+
+            <tr>
+                <th>"Very Socially Inappropriate"</th>
+                <th>“Somewhat Socially Inappropriate”</th>
+                <th> "Neutral"</th>
+                <th>“Somewhat Socially Appropriate”</th>
+                <th>“Very Socially Appropriate”</th>
+            </tr>
+    </table>
+
+             <input type="range" name="normsgreen" id="norm3" min="10" step="1" max="50" oninput="updateDescription3(this)"   class="slider">
+           <center>      <p > Your guess from 1 (Very Socially Inappropriate) to 5 (Very Socially Appropriate):  </p></center>
+            <center><p id="description3"> -  </p></center>
+         </div>
+
+
+
+
+</div>
+</div>
+        </div>
+
+<center>
+            {{ next_button }}
+</center>
+                 </div>
+
+
+
+
+           </div>
+
+{{ endblock }}
+
+            {{block script}}
+
+<script>
+
+let description = document.getElementById('description');
+let description2 = document.getElementById('description2');
+let description3 = document.getElementById('description3');
+let description4 = document.getElementById('description4');
+
+function updateDescription(input) {
+    let take = parseInt(input.value)/10;
+    description.innerText = `${take}`;
+
+}
+
+function updateDescription2(input) {
+    let take = parseInt(input.value)/10;
+    description2.innerText = `${take}`;
+}
+function updateDescription3(input) {
+    let take = parseInt(input.value)/10;
+    description3.innerText = `${take}`;
+}
+function updateDescription4(input) {
+    let take = parseInt(input.value)/10;
+    description4.innerText = `${take}`;
+}
+function myFunction2() {
+    var x = document.getElementById("see");
+    var y = document.getElementById("see2");
+    x.style.display = "block"
+    y.style.display = "block"
+}
+
+const myTimeout = setTimeout(myFunction2, 2500);
+</script>
+{{endblock}}

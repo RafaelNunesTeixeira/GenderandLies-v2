@@ -1,0 +1,282 @@
+{{ block style }}
+    <style>
+        td {
+            text-align: center;
+            vertical-align: middle;
+            }
+        tr {
+        text-align: center;
+        vertical-align: middle;
+        }
+
+    </style>
+{{ endblock }}
+
+{{ block title }}
+Survey Part 8
+{{ endblock }}
+
+{{ block content }}
+
+           <div class="card bg-light m-3">
+        <div class="card-body">
+
+<p>
+</p>
+<p>
+Consider other participants acting as Participant 1 in the previous task. All of them have the following characteristics.
+</p>
+
+{{ include Constants.match }}
+
+                        <p> Remember: </p>
+<ul>
+             <li> <span style="color: #008000"> <strong>GREEN </strong> </span>: Participant 1 <strong>400 points</strong>,  Participant 2 <strong>600 points</strong> </li>
+             <li>  <span style="color: #0000FF"> <strong>BLUE</strong> </span>:  Participant 1  <strong>800 points</strong>,  Participant 2 <strong>200 points</strong> </li>
+    <li> <strong>Punish</strong>:  Participant 1  <strong>-300 points</strong>,  Participant 2 <strong>-50 points</strong> </li>
+        </ul>
+
+            <p> For each behavior,please evaluate which motives stand behind the behavior. Describe from "Strongly Disagree" to "Strongly agree" how you perceive the behavior according to the description on the third column.</p>
+            <p> For example: if the third column describes "Situational factor", you have to answer "to what extent the behavior described in the previous columns is a due to a -Situational factor-".</p>
+            <p> For this part, you have to evaluate the behaviors of Participant 2. </p>
+            <p>The first column represents the color Participant 1 randomly received. The second indicates which information Participant 1 gave Participant 2. The third column shows the behavior of Participant 2. The fourth column represents possible motives behind the behavior of Participant 2.</p>
+
+</div>
+            <input type="hidden" name="perblue1p" id="a1" >
+
+ <div class="form-group required">
+<table class="table table-hover table-striped table-responsive mx-auto ">
+    <thead>
+
+        <tr>
+            <th>P1 Received</th>
+            <th>P1 informed</th>
+                  <th>P2's reaction</th>
+            <th>Perception</strong></th>
+            <th>"Strongly disagree"</th>
+            <th>“Partially disagree”</th>
+            <th> "Neither agree nor disagree"</th>
+            <th>“Partially agree”</th>
+            <th>“Strongly agree”</th>
+        </tr>
+
+    </thead>
+    <tbody>
+
+
+
+
+        <tr>
+
+            <td><span style="color: #008000"> <strong>GREEN</strong></span></td>
+            <td><span style="color: #0000FF"> <strong>BLUE</strong> </span></td>
+                   <td><Strong>Punish</Strong></td>
+            <td><Strong>Situational factor</Strong></td>
+            <td><input type="radio" value="1" name="a1" required/></td>
+            <td><input type="radio" value="2" name="a1"/></td>
+            <td><input type="radio" value="3" name="a1"/></td>
+            <td><input type="radio" value="4" name="a1"/></td>
+            <td><input type="radio" value="5" name="a1"/></td>
+        </tr>
+    </tbody>
+
+ </div>
+
+
+
+
+            <input type="hidden" name="perblue2p" id="a2" >
+
+ <div class="form-group required">
+
+    <thead>
+
+        <tr>
+            <th>P1 Received</th>
+            <th>P1 informed</th>
+                  <th>P2's reaction</th>
+            <th>Perception</strong></th>
+            <th>"Strongly disagree"</th>
+            <th>“Partially disagree”</th>
+            <th> "Neither agree nor disagree"</th>
+            <th>“Partially agree”</th>
+            <th>“Strongly agree”</th>
+        </tr>
+
+    </thead>
+    <tbody>
+
+
+
+
+        <tr>
+
+            <td><span style="color: #008000"> <strong>GREEN</strong></span></td>
+            <td><span style="color: #0000FF"> <strong>BLUE</strong> </span></td>
+                   <td><Strong>Punish</Strong></td>
+            <td><Strong>Rational calculation</Strong></td>
+            <td><input type="radio" value="1" name="a2" required/></td>
+            <td><input type="radio" value="2" name="a2"/></td>
+            <td><input type="radio" value="3" name="a2"/></td>
+            <td><input type="radio" value="4" name="a2"/></td>
+            <td><input type="radio" value="5" name="a2"/></td>
+        </tr>
+    </tbody>
+
+ </div>
+
+
+
+            <input type="hidden" name="perblue3p" id="a3" >
+
+ <div class="form-group required">
+
+    <thead>
+
+        <tr>
+            <th>P1 Received</th>
+            <th>P1 informed</th>
+                  <th>P2's reaction</th>
+            <th>Perception</strong></th>
+           <th>"Strongly disagree"</th>
+            <th>“Partially disagree”</th>
+            <th> "Neither agree nor disagree"</th>
+            <th>“Partially agree”</th>
+            <th>“Strongly agree”</th>
+        </tr>
+
+    </thead>
+    <tbody>
+
+
+
+
+        <tr>
+
+            <td><span style="color: #008000"> <strong>GREEN</strong></span></td>
+            <td><span style="color: #0000FF"> <strong>BLUE</strong> </span></td>
+                   <td><Strong>Punish</Strong></td>
+            <td><Strong>An emotional decision</Strong></td>
+            <td><input type="radio" value="1" name="a3" required/></td>
+            <td><input type="radio" value="2" name="a3"/></td>
+            <td><input type="radio" value="3" name="a3"/></td>
+            <td><input type="radio" value="4" name="a3"/></td>
+            <td><input type="radio" value="5" name="a3"/></td>
+        </tr>
+    </tbody>
+
+ </div>
+
+
+
+
+            <input type="hidden" name="perblue4p" id="a4" >
+
+ <div class="form-group required">
+
+    <thead>
+
+        <tr>
+            <th>P1 Received</th>
+            <th>P1 informed</th>
+                  <th>P2's reaction</th>
+            <th>Perception</strong></th>
+          <th>"Strongly disagree"</th>
+            <th>“Partially disagree”</th>
+            <th> "Neither agree nor disagree"</th>
+            <th>“Partially agree”</th>
+            <th>“Strongly agree”</th>
+        </tr>
+
+    </thead>
+    <tbody>
+
+
+
+
+        <tr>
+
+            <td><span style="color: #008000"> <strong>GREEN</strong></span></td>
+            <td><span style="color: #0000FF"> <strong>BLUE</strong> </span></td>
+                   <td><Strong>Punish</Strong></td>
+            <td><Strong>Malicious intention</Strong></td>
+            <td><input type="radio" value="1" name="a4" required/></td>
+            <td><input type="radio" value="2" name="a4"/></td>
+            <td><input type="radio" value="3" name="a4"/></td>
+            <td><input type="radio" value="4" name="a4"/></td>
+            <td><input type="radio" value="5" name="a4"/></td>
+        </tr>
+    </tbody>
+
+ </div>
+
+
+
+
+
+
+            <input type="hidden" name="perblue5p" id="a5" >
+
+ <div class="form-group required">
+
+    <thead>
+
+        <tr>
+            <th>P1 Received</th>
+            <th>P1 informed</th>
+                  <th>P2's reaction</th>
+            <th>Perception</strong></th>
+          <th>"Strongly disagree"</th>
+            <th>“Partially disagree”</th>
+            <th> "Neither agree nor disagree"</th>
+            <th>“Partially agree”</th>
+            <th>“Strongly agree”</th>
+        </tr>
+
+    </thead>
+    <tbody>
+
+
+
+
+        <tr>
+
+            <td><span style="color: #008000"> <strong>GREEN</strong></span></td>
+            <td><span style="color: #0000FF"> <strong>BLUE</strong> </span></td>
+            <td><Strong>Punish</Strong></td>
+            <td><Strong>An honest mistake</Strong></td>
+            <td><input type="radio" value="1" name="a5" required/></td>
+            <td><input type="radio" value="2" name="a5"/></td>
+            <td><input type="radio" value="3" name="a5"/></td>
+            <td><input type="radio" value="4" name="a5"/></td>
+            <td><input type="radio" value="5" name="a5"/></td>
+        </tr>
+    </tbody>
+
+ </div>
+
+<table>
+
+
+
+               <br>
+            <br>
+            <center>
+            {{ next_button }}
+</center>
+{{ endblock }}
+
+                   {{block script}}
+
+<script>
+
+    $('input:radio').click(function() {
+       document.getElementById('a1').value = $('input:radio[name=a1]:checked').val();
+       document.getElementById('a2').value = $('input:radio[name=a2]:checked').val();
+       document.getElementById('a3').value = $('input:radio[name=a3]:checked').val();
+       document.getElementById('a4').value = $('input:radio[name=a4]:checked').val();
+       document.getElementById('a5').value = $('input:radio[name=a4]:checked').val();
+
+    })
+</script>
+{{endblock}}
